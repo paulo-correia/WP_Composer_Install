@@ -1,0 +1,43 @@
+{
+    "name": "paulo-correia/composer_wordpress-pt_br",
+    "description": "Instalação do WordPress com o Composer",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+           {
+            "name": "Paulo Correia",
+            "role": "Developer",
+            "homepage": "https://github.com/paulo-correia"
+        }
+    ],
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "repositories": [
+        {
+            "type": "package",
+                "package": {
+                    "name": "paulo-correia/wordpress-pt_br",
+                    "version": "master",
+	                "dist": {
+                       "type": "zip",
+                        "url": "https://br.wordpress.org/latest-pt_BR.zip",
+                        "reference": "master"
+                    }
+               }         
+        },
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org"         
+        }        
+    ],
+    "require": {
+        "koodimonni/composer-dropin-installer": "dev-master",
+        "paulo-correia/wordpress-pt_br": "dev-master"
+    },
+    "extra": {
+        "dropin-paths": {
+		    "/": ["vendor:paulo-correia"]
+	    }
+    }
+}
